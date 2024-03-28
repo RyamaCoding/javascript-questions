@@ -112,3 +112,126 @@ function loggedOrSubscribed(login, subscription) {
 }
 
 console.log(loggedOrSubscribed('LOGGED_IN', 'SUBSCRIBED'))
+
+/* MEDIUM LEVEL CHALLENGES */
+
+//* if given a falsy value as element 1 return the falsy value 
+
+function returnFalsy(elem1, elem2) {
+    return !elem1 ? elem1 : elem2; 
+}
+
+console.log(returnFalsy(0, 500))
+
+//* return the length of any given array
+
+function lengthArray(arr) {
+    return arr.length;
+}
+
+console.log(lengthArray([5, 10, 15, 20]))
+
+//* return the last number of any given array
+
+function lastArrayNumber(arr) {
+    return arr[arr.length - 1];
+}
+
+console.log(lastArrayNumber([1, 2, 7]))
+
+//* find the sum of all elements in the array
+
+function sumArray(arr) {
+    let sum = 0;
+
+    for (i = 0; i < arr.length; i++) {
+        sum = sum + arr[i];
+    }
+
+    return sum;
+}
+
+console.log(sumArray([1, 2, 3, 4, 5]))
+
+//* add up the numbers from a single number
+
+function progressiveSum(num) {
+    let sum = 0 
+
+    for (i = 1; i <= num; i++) {
+        sum = sum + i;
+    }
+
+    return sum;
+}
+
+console.log(progressiveSum(3))
+
+//* convert seconds into a minute and seconds timer
+
+function secondsToTimer(seconds) {
+    let timerSeconds = seconds % 60;
+    let timerMinutes = Math.floor(seconds / 60);
+
+    if (timerMinutes.toString().length === 1) {
+        timerMinutes = '0' + timerMinutes;
+    }
+
+    if (timerSeconds.toString().length === 1) {
+        timerSeconds = '0' + timerSeconds
+    }
+
+    return timerMinutes + ':' + timerSeconds;
+}
+
+console.log(secondsToTimer(245))
+
+//* find the biggest number of an element
+
+function findBigNum(arr) {
+    let num = 0;
+
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] > num) {
+            num = arr[i];
+        }
+    }
+
+    return num;
+}
+
+console.log(findBigNum([0, 10, 100, 75]))
+
+//* reverse the string abc to cba and so on
+
+function reverseString(string) {
+    return string.split("").reverse().join("");
+} 
+
+console.log(reverseString('abc'))
+
+//* turn every element of an array into 0 use map
+
+function everythingZero(arr) {
+    return arr.map(element => {
+        return 0;
+    })
+}
+
+console.log(everythingZero([10, 20, 30, 40]))
+
+//* Remove apples from the list
+
+function removeApples(arr) {
+    let noApples = []
+
+    for (i = 0; i < arr.length; i++) {
+        if(arr[i] !== 'Apples') {
+            noApples.push(arr[i]); 
+        }
+    }
+
+    return noApples;
+}
+
+console.log(removeApples(['Apples', 'Bananas', 'Oranges']))
